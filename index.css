@@ -1,0 +1,103 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: sans-serif;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+ul {
+    position: relative;
+    display: flex;
+    gap: 26px;
+}
+
+ul li {
+    position: relative;
+    list-style: none;
+    width: 65px;
+    height: 65px;
+    background: #fff;
+    border-radius: 65px;
+    cursor: pointer;
+    transition: 0.5s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+}
+
+ul li:hover {
+    width: 180px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0);
+}
+
+ul li::before {
+    inset: 0;
+    opacity: 0;
+    content: "";
+    transition: 0.5s;
+    position: absolute;
+    border-radius: 65px;
+    background: linear-gradient(45deg, var(--i), var(--j));
+}
+
+ul li:hover::before {
+    opacity: 1;
+}
+
+ul li::after {
+    content: "";
+    top: 10px;
+    opacity: 0;
+    width: 100%;
+    z-index: -1;
+    height: 100%;
+    transition: 0.5s;
+    filter: blur(15px);
+    position: absolute;
+    border-radius: 65px;
+    background: linear-gradient(45deg, var(--i), var(--j));
+}
+
+ul li:hover::after {
+    opacity: 0.5;
+}
+
+ul li ion-icon {
+    color: black;
+    transition: 0.5s;
+    transition-delay: 0.25s;
+    font-size: 1.8rem;
+}
+
+ul li:hover ion-icon {
+    transform: scale(0);
+    transition-delay: 0;
+    color: #fff;
+}
+
+ul li span {
+    position: absolute;
+}
+
+ul li .title {
+    font-size: 1.1rem;
+    color: #fff;
+    letter-spacing: 0.1em;
+    transition: 0.5s;
+    transform: scale(0);
+    transition-delay: 0s;
+    text-transform: uppercase;
+}
+
+ul li:hover .title {
+    transition-delay: 0.25s;
+    transform: scale(1);
+}
